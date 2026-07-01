@@ -1,0 +1,18 @@
+# Copy this file to terraform.tfvars and fill in your real values.
+# terraform.tfvars is gitignored — never commit it.
+
+# ── Optional (defaults are fine for most cases) ──────────────────────────────
+
+aws_region    = "us-east-1"
+project_name  = "auditsafely-labs"
+instance_type = "t3.micro"
+
+# ── Required ─────────────────────────────────────────────────────────────────
+
+# Absolute path to your SSH public key
+# Generate with: ssh-keygen -t ed25519 -C "auditsafely-labs" -f ~/.ssh/auditsafely-labs
+public_key_path = "/Users/YOUR_USERNAME/.ssh/auditsafely-labs.pub"
+
+# Your home IP in CIDR notation — restricts SSH and app ports to your machine only
+# Find your IP with: curl -s ifconfig.me && echo
+your_ip_cidr = "YOUR_IP_HERE/32"
