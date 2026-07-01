@@ -1,6 +1,6 @@
 resource "aws_security_group" "main" {
   name        = "${var.project_name}-sg"
-  description = "AuditSafely Labs — SSH restricted to developer IP, HTTP/HTTPS public"
+  description = "AuditSafely Labs - SSH restricted to developer IP, HTTP/HTTPS public"
 
   # SSH — your IP only
   ingress {
