@@ -39,6 +39,10 @@ resource "aws_instance" "main" {
     Name    = var.project_name
     Project = var.project_name
   }
+
+  lifecycle {
+    ignore_changes = [ami, user_data]
+  }
 }
 
 resource "aws_eip" "main" {
