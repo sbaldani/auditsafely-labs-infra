@@ -11,14 +11,14 @@ terraform {
   # Local backend — state stored in terraform.tfstate next to this file.
   # To migrate to S3 (Phase 2), replace this block with:
   #
-  # backend "s3" {
-  #   bucket         = "auditsafely-labs-tfstate"
-  #   key            = "terraform.tfstate"
-  #   region         = "us-east-1"
-  #   dynamodb_table = "auditsafely-labs-tfstate-lock"
-  # }
+  backend "s3" {
+    bucket         = "auditsafely-labs-tfstate-827949090132"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    use_lockfile   = true
+    profile        = "auditsafely-labs"
+  }
 }
-
 provider "aws" {
   region  = var.aws_region
   profile = "auditsafely-labs"
